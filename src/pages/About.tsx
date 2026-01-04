@@ -1,7 +1,7 @@
 import Header from "@/components/campaign/Header";
 import Footer from "@/components/campaign/Footer";
 import { Button } from "@/components/ui/button";
-import communityPhoto from "@/assets/community-photo.jpg";
+import communityPhoto from "@/assets/alipodio.jpg";
 
 const About = () => {
   const values = [
@@ -96,28 +96,33 @@ const About = () => {
             </div>
             <div className="font-body text-lg space-y-4">
               <p>
-                <strong className="text-campaign-blue">Abshir Ali</strong> is an
-                American with family through Somalia and North Minneapolis. He's
-                a{" "}
-                <strong className="text-campaign-green">
-                  lifetime St. Paul
+                <strong className="text-campaign-blue">
+                  My name is Abshir Ali
+                </strong>
+                , and I am running for the Minnesota House of Representatives in
+                District 65B. I was raised in{" "}
+                <strong className="text-campaign-blue">Saint Paul</strong> in a
+                community full of {""}{" "}
+                <strong className="text-campaign-blue">
+                  resilience, culture, and potential
                 </strong>{" "}
-                resident, community organizer, and a new homeowner here in Ward
-                1.
+                {""} but also one that has too often been overlooked and
+                underinvested in. {""} Growing up here shaped how I see {""}
+                <strong className="text-campaign-blue">leadership</strong>
+                
+                . I
+                learned early that real change does not come from talking about
+                communities. <strong className="text-campaign-blue">It comes from standing with them and doing the
+                work</strong>.
               </p>
               <p>
-                Ali has spent years organizing alongside his neighbors, fighting
-                for affordable housing, environmental justice, and equitable
-                economic development.
+                I have spent years {''} <strong className="text-campaign-blue "> organizing, building coalitions, and serving in leadership roles </strong>  that put me at the intersection of community and government. I have worked inside city systems and alongside residents, {' '} <strong className="text-campaign-blue">  helping turn ideas into action and making sure everyday people have a voice in decisions that affect their lives. </strong> Those experiences taught me how policy is made and how it should be made.
               </p>
               <p>
-                Ali is running for Mayor to make <strong>Saint Paul</strong> a
-                more{" "}
-                <strong className="text-campaign-green">
-                  affordable and healthy city
-                </strong>{" "}
-                for all of us. He's excited to work alongside our community to
-                build a better future for Saint Paul.
+                I am a young leader, but I am not new to responsibility. I bring {' '} <strong className="text-campaign-blue">vision, energy, and a deep understanding of how to move institutions</strong> while staying grounded in the needs of the people. I believe Minnesota is strongest when leadership reflects the communities it serves and when government {' '} <strong className="text-campaign-blue">works with urgency, integrity, and compassion</strong> .
+              </p>
+              <p>
+                I am running because {' '} <strong className="text-campaign-blue"> District 65B </strong>  deserves representation that {' '} <strong className="text-campaign-blue"> listens, leads, and delivers. </strong> This campaign is about building a future where {' '}<strong className="text-campaign-blue"> every neighborhood is valued, every voice matters, and the next generation can see themselves in the people fighting for them at the Capitol. </strong>
               </p>
             </div>
           </div>

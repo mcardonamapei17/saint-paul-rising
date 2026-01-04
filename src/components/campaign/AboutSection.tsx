@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import communityPhoto from "@/assets/community-photo.jpg";
+import communityPhoto from "@/assets/persona.jpg";
 
 const AboutSection = () => {
   return (
@@ -27,11 +27,28 @@ const AboutSection = () => {
           {/* Text on right */}
           <div className="font-body text-foreground text-lg space-y-4">
             <p>
-              Abshir Ali is an American with family through <strong>Somalia</strong>, North Minneapolis. He's a <strong className="text-campaign-green">lifetime St. Paul</strong> resident, community organizer, and a new homeowner here in Ward 1.
-            </p>
-            <p>
-              Ali is running for Mayor to make <strong>Saint Paul</strong> a more <strong className="text-campaign-green">affordable and healthy city</strong> for all of us. He's excited to work alongside our community to build a better future for Saint Paul.
-            </p>
+                <strong className="text-campaign-blue">
+                  My name is Abshir Ali
+                </strong>
+                , and I am running for the Minnesota House of Representatives in
+                District 65B. I was raised in{" "}
+                <strong className="text-campaign-blue">Saint Paul</strong> in a
+                community full of {""}{" "}
+                <strong className="text-campaign-blue">
+                  resilience, culture, and potential
+                </strong>{" "}
+                {""} but also one that has too often been overlooked and
+                underinvested in. {""} Growing up here shaped how I see {""}
+                <strong className="text-campaign-blue">leadership</strong>
+                
+                . I
+                learned early that real change does not come from talking about
+                communities. <strong className="text-campaign-blue">It comes from standing with them and doing the
+                work</strong>.
+              </p>
+              <p>
+                I am running because {' '} <strong className="text-campaign-blue"> District 65B </strong>  deserves representation that {' '} <strong className="text-campaign-blue"> listens, leads, and delivers. </strong> This campaign is about building a future where {' '}<strong className="text-campaign-blue"> every neighborhood is valued, every voice matters, and the next generation can see themselves in the people fighting for them at the Capitol. </strong>
+              </p>
 
             <Link to="/about">
               <Button variant="action" size="lg" className="mt-8">

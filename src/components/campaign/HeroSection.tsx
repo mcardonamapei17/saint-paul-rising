@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import candidatePortrait from "@/assets/candidate-portrait.jpg";
+import candidatePortrait from "@/assets/ali.jpg";
 import sunburstBg from "@/assets/sunburst-bg.jpg";
 import campaignLogo from "@/assets/campaign-logo.png";
 
@@ -66,7 +66,7 @@ const HeroSection = () => {
 
         {/* Right Column - Candidate Image */}
         <div className="flex justify-center md:justify-end items-stretch" style={{ animationDelay: '0.4s' }}>
-          <div className="relative w-full h-full md:translate-x-8">
+          <div className="relative w-full h-full md:translate-x-20">
             <img 
               src={candidatePortrait} 
               alt="Ali - Candidate for Saint Paul" 
