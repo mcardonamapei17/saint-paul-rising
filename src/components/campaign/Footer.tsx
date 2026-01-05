@@ -68,14 +68,48 @@ const Footer = () => {
   return (
     <footer className="texture-green">
       {/* Signup Section with white background */}
-      <div className="bg-white/95 py-1">
+      <div className="bg-white/95 py-4 md:py-1">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          {/* Mobile: Logo left, Button right with iOS style */}
+          <div className="flex md:hidden items-center justify-between w-full gap-4 px-4">
+            {/* Logo - sin card */}
+            <img 
+              src={campaignLogo} 
+              alt="Ali for Saint Paul" 
+              className="h-24 w-auto flex-shrink-0"
+            />
+
+            {/* Button - iOS style card */}
+            <div 
+              className="backdrop-blur-xl bg-white/70 rounded-3xl p-4 border border-white/60 flex-shrink-0"
+              style={{ 
+                borderRadius: '1.5rem',
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08)'
+              }}
+            >
+              <a href="/#volunteer" onClick={handleVolunteerClick} className="block">
+                <Button 
+                  variant="heroYellow" 
+                  size="lg" 
+                  className="rounded-full h-14 text-base font-semibold active:scale-[0.97] active:opacity-90 transition-all duration-200 hover:scale-[1.02]"
+                  style={{ 
+                    borderRadius: '9999px',
+                    boxShadow: '0 4px 14px 0 rgba(0, 0, 0, 0.15)'
+                  }}
+                >
+                  Join Us
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          {/* Desktop: Centered layout */}
+          <div className="hidden md:flex md:flex-row items-center justify-center gap-8">
             {/* Logo */}
             <img 
               src={campaignLogo} 
               alt="Ali for Saint Paul" 
-              className="h-32 md:h-40 w-auto"
+              className="h-40 w-auto"
             />
 
             {/* Button */}

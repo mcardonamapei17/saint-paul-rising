@@ -111,70 +111,91 @@ const VolunteerSection = () => {
   };
 
   return (
-    <section id="volunteer" className="bg-campaign-green py-20 texture-green">
-      <div className="container">
-        <div className="max-w-2xl mx-auto text-center">
+    <section id="volunteer" className="bg-campaign-green py-16 md:py-20 texture-green relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-0 w-64 h-64 bg-campaign-yellow/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
+      </div>
+
+      <div className="container relative z-10">
+        <div className="max-w-2xl mx-auto">
           {/* Headline */}
-          <h2 className="font-display text-campaign-cream text-4xl md:text-5xl mb-4">
+          <h2 className="font-display text-campaign-cream text-3xl md:text-4xl lg:text-5xl mb-4 text-center font-bold">
             WE NEED <span className="text-campaign-yellow">VOLUNTEERS!</span>
           </h2>
           
           {/* Subtext */}
-          <p className="font-body text-campaign-cream text-lg mb-8">
+          <p className="font-body text-campaign-cream/90 text-base md:text-lg mb-8 text-center">
             Get involved today! Sign up to volunteer and join our grassroots movement for a better Saint Paul.
           </p>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4 max-w-xl mx-auto">
-            <Input 
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
-              required
-            />
-             <Input 
-              type="text"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
-              required
-            />
-            <Input 
-              type="text"
-              placeholder="Phone Number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
-              required
-            />
-            <Input 
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
-              required
-            />
-            <Input 
-              type="text"
-              placeholder="ZIP Code"
-              value={ZIPCode}
-              onChange={(e) => setZIPCode(e.target.value)}
-              className="bg-card border-foreground/20 col-span-2 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
-              required
-            />
-            <Button 
-              variant="heroYellow" 
-              size="lg" 
-              type="submit" 
-              className="col-span-2 w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Join the Team"}
-            </Button>
+          {/* Form - iOS style card */}
+          <form 
+            onSubmit={handleSubmit} 
+            className="backdrop-blur-xl bg-white/10 rounded-3xl p-6 md:p-8 shadow-2xl border border-white/20 max-w-xl mx-auto"
+            style={{ 
+              borderRadius: '1.5rem',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)'
+            }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input 
+                type="text"
+                placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="bg-white/90 backdrop-blur-sm border-white/30 rounded-2xl h-14 px-4 text-base focus:bg-white focus:border-campaign-yellow focus:ring-2 focus:ring-campaign-yellow/20 transition-all duration-200"
+                style={{ borderRadius: '1rem' }}
+                required
+              />
+              <Input 
+                type="text"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                className="bg-white/90 backdrop-blur-sm border-white/30 rounded-2xl h-14 px-4 text-base focus:bg-white focus:border-campaign-yellow focus:ring-2 focus:ring-campaign-yellow/20 transition-all duration-200"
+                style={{ borderRadius: '1rem' }}
+                required
+              />
+              <Input 
+                type="text"
+                placeholder="Phone Number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className="bg-white/90 backdrop-blur-sm border-white/30 rounded-2xl h-14 px-4 text-base focus:bg-white focus:border-campaign-yellow focus:ring-2 focus:ring-campaign-yellow/20 transition-all duration-200"
+                style={{ borderRadius: '1rem' }}
+                required
+              />
+              <Input 
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white/90 backdrop-blur-sm border-white/30 rounded-2xl h-14 px-4 text-base focus:bg-white focus:border-campaign-yellow focus:ring-2 focus:ring-campaign-yellow/20 transition-all duration-200"
+                style={{ borderRadius: '1rem' }}
+                required
+              />
+              <Input 
+                type="text"
+                placeholder="ZIP Code"
+                value={ZIPCode}
+                onChange={(e) => setZIPCode(e.target.value)}
+                className="bg-white/90 backdrop-blur-sm border-white/30 rounded-2xl h-14 px-4 text-base col-span-1 md:col-span-2 focus:bg-white focus:border-campaign-yellow focus:ring-2 focus:ring-campaign-yellow/20 transition-all duration-200"
+                style={{ borderRadius: '1rem' }}
+                required
+              />
+              <Button 
+                variant="heroYellow" 
+                size="lg" 
+                type="submit" 
+                className="col-span-1 md:col-span-2 w-full rounded-full h-14 text-base font-semibold shadow-lg active:scale-[0.97] active:opacity-90 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] mt-2"
+                style={{ borderRadius: '9999px' }}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Join the Team"}
+              </Button>
+            </div>
           </form>
         </div>
       </div>

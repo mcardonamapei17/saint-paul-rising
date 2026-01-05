@@ -100,7 +100,7 @@ const Header = () => {
         className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-[60]"
         style={{ top: '-12.42%' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-transparent rounded-full blur-3xl" style={{ transform: 'scale(1.4)' }}/>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/15 to-transparent rounded-full blur-3xl" style={{ transform: 'scale(1.4)' }}/>
         <img
           src={campaignLogo}
           alt="Ali for Saint Paul"
@@ -114,21 +114,21 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-3">
           <a 
             href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF" 
-            className="text-campaign-cream hover:text-campaign-yellow transition-colors"
+            className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="TictTok"
           >
             <Facebook className="w-5 h-5" />
           </a>
           <a 
             href="#" 
-            className="text-campaign-cream hover:text-campaign-yellow transition-colors"
+            className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="Twitter"
           >
             <Twitter className="w-5 h-5" />
           </a>
           <a 
             href="https://www.instagram.com/aliforstp" 
-            className="text-campaign-cream hover:text-campaign-yellow transition-colors"
+            className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="Instagram"
           >
             <Instagram className="w-5 h-5" />
@@ -144,7 +144,7 @@ const Header = () => {
       e.preventDefault();
       handleHomeClick();
     }}
-    className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide"
+    className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
   >
     Home
   </a>
@@ -156,7 +156,7 @@ const Header = () => {
       e.preventDefault();
       handleAboutClick();
     }}
-    className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide"
+    className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
   >
     About
   </a>
@@ -165,16 +165,16 @@ const Header = () => {
   <a 
     href="/#volunteer"
     onClick={handleVolunteerClick}
-    className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide"
+    className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
   >
     Volunteer
   </a>
 
-  <a href="#" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
+  <a href="#" className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide">
     Events
   </a>
 
-  <Button variant="donate" size="sm">
+  <Button variant="donate" size="sm" className="active:scale-95 transition-all duration-200">
     Donate
   </Button>
 </nav>
@@ -182,16 +182,25 @@ const Header = () => {
         {/* Hamburger Menu Button (Mobile) */}
         <button 
           onClick={toggleMenu}
-          className="lg:hidden text-campaign-cream hover:text-campaign-yellow transition-colors"
+          className="lg:hidden text-campaign-cream hover:text-campaign-yellow transition-all duration-200 active:scale-95"
           aria-label="Toggle menu"
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isOpen ? (
+            <X className="w-6 h-6 animate-in fade-in duration-200" />
+          ) : (
+            <Menu className="w-6 h-6 animate-in fade-in duration-200" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-campaign-blue/55 border-t border-campaign-cream/20 texture-green">
+        <div 
+          className="lg:hidden bg-campaign-blue/55 border-t border-campaign-cream/20 texture-green overflow-hidden"
+          style={{
+            animation: 'slideDown 0.3s ease-out'
+          }}
+        >
           <div className="container py-4 flex flex-col gap-4">
             <a 
               href="/" 
@@ -200,7 +209,10 @@ const Header = () => {
                 setIsOpen(false);
                 handleHomeClick();
               }}
-              className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
+              className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
+              style={{
+                animation: 'fadeInUp 0.4s ease-out 0.05s forwards'
+              }}
             >
               Home
             </a>
@@ -211,29 +223,69 @@ const Header = () => {
                 setIsOpen(false);
                 handleAboutClick();
               }}
-              className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
+              className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
+              style={{
+                animation: 'fadeInUp 0.4s ease-out 0.1s forwards'
+              }}
             >
               About
             </a>
             <a 
               href="/#volunteer"
               onClick={handleVolunteerClick}
-              className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
+              className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
+              style={{
+                animation: 'fadeInUp 0.4s ease-out 0.15s forwards'
+              }}
             >
               Volunteer
             </a>
             <a 
               href="#" 
-              className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
+              className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
+              style={{
+                animation: 'fadeInUp 0.4s ease-out 0.2s forwards'
+              }}
             >
               Events
             </a>
-            <Button variant="donate" size="sm" className="w-full">
+            <Button 
+              variant="donate" 
+              size="sm" 
+              className="w-full active:scale-95 transition-all duration-200 opacity-0"
+              style={{
+                animation: 'fadeInUp 0.4s ease-out 0.25s forwards'
+              }}
+            >
               Donate
             </Button>
           </div>
         </div>
       )}
+      
+      <style>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </header>
   );
 };
