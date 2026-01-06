@@ -99,7 +99,7 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="font-body text-xl md:text-2xl lg:text-3xl max-w-2xl text-foreground leading-relaxed text-left font-semibold">
-              Join our grassroots movement fighting for bold, progressive change for Saint Paul.
+              Join our grassroots movement fighting for bold, progressive change for the District 65B.
             </p>
 
             {/* Decorative divider */}
@@ -132,7 +132,7 @@ const HeroSection = () => {
                   Sign Up to Volunteer
                 </Button>
               </a>
-              <a href="">
+              <a href="https://secure.actblue.com/donate/alifor65b">
                 <Button variant="heroYellow" size="lg">
                   Make a Donation
                 </Button>

@@ -8,7 +8,7 @@ const About = () => {
     {
       title: "Community First",
       description:
-        "Building a Saint Paul where every voice matters and every neighborhood thrives.",
+        "Building a District 65B where every voice matters and every neighborhood thrives.",
     },
     {
       title: "Economic Justice",
@@ -18,7 +18,7 @@ const About = () => {
     {
       title: "Environmental Stewardship",
       description:
-        "Protecting our parks, rivers, and air for future generations of Saint Paul residents.",
+        "Protecting our parks, rivers, and air for future generations of District 65B residents.",
     },
     {
       title: "Equity & Inclusion",
@@ -31,7 +31,7 @@ const About = () => {
     {
       title: "Affordable Housing",
       description:
-        "Saint Paul families are being priced out of their homes. Ali will fight for rent stabilization, increased affordable housing development, and protections for renters.",
+        "District 65B families are being priced out of their homes. Ali will fight for rent stabilization, increased affordable housing development, and protections for renters.",
       icon: "🏠",
     },
     {
@@ -158,7 +158,7 @@ const About = () => {
             THE ISSUES
           </h2>
           <p className="font-body text-campaign-cream text-xl text-center max-w-2xl mx-auto mb-12">
-            Ali is focused on the challenges that matter most to Saint Paul
+            Ali is focused on the challenges that matter most to District 65B
             families.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -187,7 +187,7 @@ const About = () => {
             JOIN THE MOVEMENT
           </h2>
           <p className="font-body text-campaign-cream/90 text-xl max-w-2xl mx-auto mb-8">
-            Together, we can build a Saint Paul that works for all of us. Sign
+            Together, we can build a District 65B that works for all of us. Sign
             up to volunteer, donate, or just stay in the loop.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -197,9 +197,11 @@ const About = () => {
               </Button>
             </a>
 
-            <Button variant="hero" size="lg">
-              Make a Donation
-            </Button>
+            <a href="https://secure.actblue.com/donate/alifor65b">
+              <Button variant="hero" size="lg">
+                Make a Donation
+              </Button>
+            </a>
           </div>
         </div>
       </section>
