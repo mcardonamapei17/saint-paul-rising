@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import campaignLogo from "@/assets/logo-fondo.png";
+import campaignLogo from "@/assets/ali65mb-black-removebg-preview.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -25,12 +25,13 @@ const Header = () => {
       if (element) {
         requestAnimationFrame(() => {
           const headerHeight = 150;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = elementPosition - headerHeight - 30;
-          
+
           window.scrollTo({
             top: Math.max(0, offsetPosition),
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         });
         return true;
@@ -50,18 +51,18 @@ const Header = () => {
   };
 
   const handleHomeClick = () => {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === "/") {
       scrollToTop();
     } else {
-      window.location.href = '/';
+      window.location.href = "/";
     }
   };
 
   const handleAboutClick = () => {
-    if (window.location.pathname === '/about') {
+    if (window.location.pathname === "/about") {
       scrollToTop();
     } else {
-      window.location.href = '/about';
+      window.location.href = "/about";
     }
   };
 
@@ -70,11 +71,11 @@ const Header = () => {
     setIsOpen(false);
 
     const scrollVolunteer = () => {
-      scrollToSection('volunteer');
+      scrollToSection("volunteer");
     };
 
-    if (window.location.pathname !== '/') {
-      window.location.href = '/';
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
       setTimeout(scrollVolunteer, 300);
     } else {
       setTimeout(scrollVolunteer, 100);
@@ -84,50 +85,51 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-campaign-blue/75 backdrop-blur-sm texture-green">
       {/* Logo positioned absolutely in the middle of header */}
       {/* Mobile: Smaller, centered, inside header */}
-      <div 
-        className="md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[60]"
-      >
+      <div className="md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[60]">
         <img
           src={campaignLogo}
           alt="Ali for Saint Paul"
-          className={`w-32 drop-shadow-lg relative ${isOpen ? 'hidden' : ''}`}
-          style={{ pointerEvents: 'none' }}
+          className={`w-32 drop-shadow-lg relative ${isOpen ? "hidden" : ""}`}
+          style={{ pointerEvents: "none" }}
         />
       </div>
-      
+
       {/* Desktop: Centered in header */}
-      <div 
+      <div
         className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-[60]"
-        style={{ top: '-12.42%' }}
+        style={{ top: "-12.42%" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/15 to-transparent rounded-full blur-3xl" style={{ transform: 'scale(1.4)' }}/>
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/15 to-transparent rounded-full blur-3xl"
+          style={{ transform: "scale(1.4)" }}
+        />
         <img
           src={campaignLogo}
           alt="Ali for Saint Paul"
-          className={`w-56 drop-shadow-lg relative ${isOpen ? 'hidden' : ''}`}
-          style={{ pointerEvents: 'none' }}
+          className={`w-56 drop-shadow-lg relative ${isOpen ? "hidden" : ""}`}
+          style={{ pointerEvents: "none" }}
         />
       </div>
-      
+
       <div className="container flex items-center justify-between py-6">
         {/* Social Icons - Left (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
-          <a 
-            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF" 
+          <a
+            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="TictTok"
           >
             <Facebook className="w-5 h-5" />
           </a>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="Twitter"
           >
             <Twitter className="w-5 h-5" />
           </a>
-          <a 
-            href="https://www.instagram.com/aliforstp" 
+          <a
+            href="https://www.instagram.com/aliforstp"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="Instagram"
           >
@@ -136,51 +138,60 @@ const Header = () => {
         </div>
 
         {/* Navigation - Right (Desktop only) */}
-       <nav className="hidden lg:flex items-center gap-6">
-  {/* 1 - Link a Home */}
-  <a 
-    href="/" 
-    onClick={(e) => {
-      e.preventDefault();
-      handleHomeClick();
-    }}
-    className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
-  >
-    Home
-  </a>
+        <nav className="hidden lg:flex items-center gap-6">
+          {/* 1 - Link a Home */}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              handleHomeClick();
+            }}
+            className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
+          >
+            Home
+          </a>
 
-  {/* 2 - Link a About */}
-  <a 
-    href="/about" 
-    onClick={(e) => {
-      e.preventDefault();
-      handleAboutClick();
-    }}
-    className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
-  >
-    About
-  </a>
+          {/* 2 - Link a About */}
+          <a
+            href="/about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleAboutClick();
+            }}
+            className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
+          >
+            About
+          </a>
 
-  {/* 3 - Link a Volunteer */}
-  <a 
-    href="/#volunteer"
-    onClick={handleVolunteerClick}
-    className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
-  >
-    Volunteer
-  </a>
+          {/* 3 - Link a Volunteer */}
+          <a
+            href="/#volunteer"
+            onClick={handleVolunteerClick}
+            className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
+          >
+            Volunteer
+          </a>
 
-  <a href="#" className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide">
-    Events
-  </a>
+          <a
+            href="#"
+            className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
+          >
+            Events
+          </a>
 
-  <Button variant="donate" size="sm" className="active:scale-95 transition-all duration-200">
-    Donate
-  </Button>
-</nav>
+          <a href="https://secure.actblue.com/donate/alifor65b">
+            <Button
+              variant="donate"
+              size="sm"
+              className="active:scale-95 transition-all duration-200"
+            >
+              Donate
+            </Button>
+          </a>
+        </nav>
 
         {/* Hamburger Menu Button (Mobile) */}
-        <button 
+        <button
           onClick={toggleMenu}
           className="lg:hidden text-campaign-cream hover:text-campaign-yellow transition-all duration-200 active:scale-95"
           aria-label="Toggle menu"
@@ -195,15 +206,15 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div 
+        <div
           className="lg:hidden bg-campaign-blue/55 border-t border-campaign-cream/20 texture-green overflow-hidden"
           style={{
-            animation: 'slideDown 0.3s ease-out'
+            animation: "slideDown 0.3s ease-out",
           }}
         >
           <div className="container py-4 flex flex-col gap-4">
-            <a 
-              href="/" 
+            <a
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
                 setIsOpen(false);
@@ -211,12 +222,12 @@ const Header = () => {
               }}
               className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
               style={{
-                animation: 'fadeInUp 0.4s ease-out 0.05s forwards'
+                animation: "fadeInUp 0.4s ease-out 0.05s forwards",
               }}
             >
               Home
             </a>
-            <a 
+            <a
               href="/about"
               onClick={(e) => {
                 e.preventDefault();
@@ -225,44 +236,46 @@ const Header = () => {
               }}
               className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
               style={{
-                animation: 'fadeInUp 0.4s ease-out 0.1s forwards'
+                animation: "fadeInUp 0.4s ease-out 0.1s forwards",
               }}
             >
               About
             </a>
-            <a 
+            <a
               href="/#volunteer"
               onClick={handleVolunteerClick}
               className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
               style={{
-                animation: 'fadeInUp 0.4s ease-out 0.15s forwards'
+                animation: "fadeInUp 0.4s ease-out 0.15s forwards",
               }}
             >
               Volunteer
             </a>
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
               style={{
-                animation: 'fadeInUp 0.4s ease-out 0.2s forwards'
+                animation: "fadeInUp 0.4s ease-out 0.2s forwards",
               }}
             >
               Events
             </a>
-            <Button 
-              variant="donate" 
-              size="sm" 
-              className="w-full active:scale-95 transition-all duration-200 opacity-0"
-              style={{
-                animation: 'fadeInUp 0.4s ease-out 0.25s forwards'
-              }}
-            >
-              Donate
-            </Button>
+            <a href="https://secure.actblue.com/donate/alifor65b">
+              <Button
+                variant="donate"
+                size="sm"
+                className="w-full active:scale-95 transition-all duration-200 opacity-0"
+                style={{
+                  animation: "fadeInUp 0.4s ease-out 0.25s forwards",
+                }}
+              >
+                Donate
+              </Button>
+            </a>
           </div>
         </div>
       )}
-      
+
       <style>{`
         @keyframes slideDown {
           from {
