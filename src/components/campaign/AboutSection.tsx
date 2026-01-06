@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import communityPhoto from "@/assets/persona.jpg";
+import communityPhoto from "@/assets/ali.jpg";
 
 const AboutSection = () => {
   return (
